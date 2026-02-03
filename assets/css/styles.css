@@ -1,0 +1,67 @@
+/* =========================
+   GOTHAM FONT
+   ========================= */
+
+/*titulo*/
+@font-face {
+        font-family: 'GothamBlack';
+        src: url('assets/fonts/Gotham-Black.otf');
+        font-weight: normal;
+        font-style: normal;
+}
+h1 {
+        font-family: 'GothamBlack', sans-serif;
+        font-size: 20px;
+        color: #009f98;
+        text-align: center;
+    }
+/*Subtitulo*/
+@font-face {
+        font-family: 'GothamBold';
+        src: url('assets/fonts/Gotham-Bold.otf');
+        font-weight: normal;
+        font-style: normal;
+}
+h2 {
+        font-family: 'GothamBold', sans-serif;
+        font-size: 16px;
+        color: #262C60;
+        text-align: center;
+    }
+/*Resaltado*/
+@font-face {
+        font-family: 'GothamMedium';
+        src: url('assets/fonts/Gotham-Medium.otf');
+        font-weight: normal;
+        font-style: normal;
+}
+h3 {
+        font-family: 'GothamMedium', sans-serif;
+        font-size: 14px;
+        color: #262C60;
+        text-align: center;
+    }
+/*Cuerpo*/
+@font-face {
+    font-family: 'GothamBook';
+    src: url('assets/fonts/Gotham-Book.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+p {
+    font-family: 'GothamBook', sans-serif;
+    font-size: 10px;
+    color: #333333;
+    text-align: justify;
+}
+
+
+/* =========================
+   COLUMNS LOOK (OPCIONAL)
+   ========================= */
+
+div[data-testid="column"] > div {
+    background: white;
+    border-radius: 10px;
+    padding: 1rem;
+}
