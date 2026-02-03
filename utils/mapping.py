@@ -72,7 +72,7 @@ def render_indicadores(project_data):
             f"<h3 style='color:#262C60; text-align:center;'>{project_data[ind['column']]}</h3>",
             unsafe_allow_html=True
         )
-        st.divider()
+        #st.divider()
 
 
 
@@ -100,17 +100,23 @@ REQUISITOS_PROYECTO = [
     ("Plan de manejo de tránsito", "plan_manejo_transito"),
     ("Intervención espacio público", "intervencion_espacio_publico"),
     ("Fuente identificada", "fuente_identificada"),
-    ("CDP", "cdp"),
 ]
 def render_tabla_progreso(project_data):
+    col1, col2 = st.columns([3, 2])
+    col1.markdown(
+        f"<h3 style='color:#262C60;'> Entidad </h3>",
+        unsafe_allow_html=True
+    )
+    col2.write(project_data['Entidad que impulsa'])
+
+    st.divider()
+
     st.markdown(
-        f"<h3 style='color:#262C60;'> Estado </h3>",
+        f"<h3 style='color:#262C60;'> Requisitos </h3>",
         unsafe_allow_html=True
     )
 
-    col1, col2 = st.columns([4, 1])
-    col1.write("**Entidad**")
-    col2.write(project_data['Entidad que impulsa'])
+    col1, col2 = st.columns([3, 2])
     for label, column in REQUISITOS_PROYECTO:
         estado = project_data[column]
         col1.write(label)

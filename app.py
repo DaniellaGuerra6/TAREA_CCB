@@ -87,7 +87,7 @@ with col_info:
 
 # Columna del estado del proyecto
 with col_estado:
-    col_indicadores, col_tabla = st.columns([1, 2])
+    col_indicadores, col_tabla = st.columns([2, 2])
 
     with col_indicadores:
         render_indicadores(data)
