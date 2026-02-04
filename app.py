@@ -65,35 +65,42 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-col_info, col_estado = st.columns([2, 3])
+col_info, col_estado = st.columns([4, 1])
 
 # Columna de información general
 with col_info:
-    st.markdown(
-        f"<h3 style='color:#262C60;'> Descripción </h3>",
-        unsafe_allow_html=True
-    )
-    st.write(data["descripcion"])
 
-    image_path = imagen_proyecto(proyecto_id)
-    st.image(image_path, width=1000)
-    
-    st.markdown(
+    col_text, col_image = st.columns([2,3])
+
+    with col_text: 
+        st.markdown(
+            f"<h3 style='color:#262C60;'> Descripción </h3>",
+            unsafe_allow_html=True
+        )
+        st.write(data["descripcion"])
+
+        st.markdown(
         f"<h3 style='color:#262C60;'> Próximos pasos</h3>",
         unsafe_allow_html=True
-    )
-    st.write(data["proximos_pasos"])
+        )
+        st.write(data["proximos_pasos"])
 
+        st.markdown(
+        f"<h3 style='color:#262C60;'> Metodología</h3>",
+        unsafe_allow_html=True
+        )
+        st.write(data["metodologia"])
+
+
+    with col_image:
+        image_path = imagen_proyecto(proyecto_id)
+        st.image(image_path, width=1200)
+
+    
 
 # Columna del estado del proyecto
 with col_estado:
-    col_indicadores, col_tabla = st.columns([2, 2])
-
-    with col_indicadores:
-        render_indicadores(data)
-
-    with col_tabla:
-        render_tabla_progreso(data)
+    render_indicadores(data)
 
 logo_base64 = load_image_64("assets/images/LOGO.png")
 st.markdown(

@@ -35,17 +35,20 @@ INDICADORES = [
     {
         "label": "Multiplicador del empleo",
         "column": "multiplicador de empleo",
-        "icon": "assets/images/empleo.svg"
+        "icon": "assets/images/empleo.svg",
+        "medida": "Empleos"
     },
     {
         "label": "Multiplicador del producto",
         "column": "multiplicador de producto",
-        "icon": "assets/images/producto.svg"
+        "icon": "assets/images/producto.svg",
+        "medida": "Miles de Millones COP"
     },
     {
         "label": "Beneficiarios directos",
         "column": "beneficiarios directos",
-        "icon": "assets/images/beneficio.svg"
+        "icon": "assets/images/beneficio.svg",
+        "medida": "Personas"
     },
 ]
 def render_indicadores(project_data):
@@ -70,6 +73,11 @@ def render_indicadores(project_data):
         # Valor con estilo h3, centrado y color definido
         st.markdown(
             f"<h3 style='color:#262C60; text-align:center;'>{project_data[ind['column']]}</h3>",
+            unsafe_allow_html=True
+        )
+        # Label en negrita, centrado
+        st.markdown(
+            f"<div style='text-align:center;'>{ind['medida']}</strong></div>",
             unsafe_allow_html=True
         )
         #st.divider()
